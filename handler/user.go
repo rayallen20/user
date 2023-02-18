@@ -8,6 +8,7 @@ import (
 	. "github.com/rayallen20/user/proto/user"
 )
 
+// User 用户对象
 type User struct {
 }
 
