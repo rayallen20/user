@@ -5,12 +5,10 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"errors"
-	"github.com/rayallen20/user/domain/service"
 	. "github.com/rayallen20/user/proto/user"
 )
 
 type User struct {
-	UserDataService service.IUserDataService
 }
 
 func (u *User) Login(ctx context.Context, request *LoginRequest, response *LoginResponse) error {
