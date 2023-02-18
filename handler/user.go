@@ -12,6 +12,7 @@ import (
 type User struct {
 }
 
+// Login 登录接口
 func (u *User) Login(ctx context.Context, request *LoginRequest, response *LoginResponse) error {
 	account := request.Account
 	password := request.Password
