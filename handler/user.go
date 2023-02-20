@@ -5,6 +5,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"errors"
+	"fmt"
 	. "github.com/rayallen20/user/proto/user"
 )
 
@@ -31,7 +32,11 @@ func (u *User) Login(ctx context.Context, request *LoginRequest, response *Login
 	md5Str := hex.EncodeToString(hash.Sum(nil))
 
 	response.Jwt = md5Str
-	response.Role.Id = 1
-	response.Role.Name = "super_admin"
+	response.Role = &Role{
+		Id:   1,
+		Name: "super_admin",
+	}
+
+	fmt.Println(1)
 	return nil
 }
